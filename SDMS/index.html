@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Database Management System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header img {
+            margin-right: 10px; /* Add margin to the right for spacing */
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+
+        #container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 85vh;
+            background-color: #E0F4FF;
+        }
+
+        .box {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #DDF2FD;
+            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .box a {
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .box a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .login-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        footer img{
+            border-radius: 20px;
+        }
+
+        /* Additional styles for social media icons */
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            margin: 0 5px;
+            width: 30px;
+            height: 30px;
+        }
+        #contact-section,
+        #about-section {
+            background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(58,96,94,1) 0%, rgba(51,114,113,1) 12%, rgba(0,249,255,0.8576680672268908) 100%);
+            padding: 20px;
+            text-align: center;
+            color:#fff;
+            font-family: 'Ephesis', cursive;
+            font-family: sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        #about-section img {
+            max-width: 1500px;
+            height: 500px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="College of Engineering Guindy" width="50" style="margin-left: 580px;">
+        <h1>College of Engineering Guindy</h1>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;1,6..12,200&family=Poppins:wght@200&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="student/studentlogin.html">Student</a>
+        <a href="teacher/teacherlogin.html">Staff</a>
+        <a href="admin/adminlogin.html">Admin</a>
+        <a href="#about-section">About Us</a>
+        <a href="#contact-section">Contact Us</a>
+    </nav>
+
+    <div id="container">
+        <div class="box">
+            <img src="student1.png" width="200px" height="200px">
+            <h2>Student</h2>
+            <p><a href="student/studentlogin.html" class="login-button" style="font-weight: bold;color:#fff;">Log in</a></p>
+        </div>
+
+        <div class="box">
+            <img src="teacher.png" width="200px" height="200px">
+            <h2>Staff</h2>
+            <p><a href="teacher/teacherlogin.html" class="login-button" style="font-weight: bold;color:#fff;">Log in</a></p>
+        </div>
+
+        <div class="box">
+            <img src="admin.png" width="200px" height="200px">
+            <h2>Admin</h2>
+            <p><a href="admin/adminlogin.html" class="login-button" style="font-weight: bold;color:#fff;">Log in</a></p>
+        </div>
+    </div>
+    <div class="about_us">
+        <!-- About Us Section -->
+        <section id="about-section">
+            <h2>About Us</h2>
+            <p>Anna University is to be a world class institution by producing professionals with high technical knowledge, professional skills and ethical values 
+                and remain as a preferred partner to the industry and community for their economic and social development through excellence in teaching, research 
+                and consultancy. Anna University shall be recognized as a point of reference, a catalyst, a facilitator, a trend setter and a leader in technical education.</p>
+            <!-- Placeholder for Photos -->
+            <img src="ceg3.jpg" alt="College Photo 1">
+            <img src="audi.jpg" alt="College Photo 2">
+            <img src="ceg2.jpg" alt="College Photo 2">
+            <img src="ceg1.jpg" alt="College Photo 2">
+            <img src="college.jpg" alt="College Photo 2">
+
+
+        </section>
+        <section id="contact-section">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us:</p>
+            <p>Email: harishvishal@gmail.com</p>
+            <p>Phone: +91 8248630594</p>
+        </section>
+    </div>
+    <footer>
+        <div class="social-icons">
+            <img src="whatsapp.jpeg" alt="WhatsApp Logo">
+            <img src="fb.png" alt="Facebook Logo">
+            <img src="youtube.jpeg" alt="YouTube Logo">
+            <img src="insta.jpeg" alt="Instagram Logo">
+        </div>
+        &copy; 2023 College of Engineering Guindy. All Rights Reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .attendance-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .student-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .student {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .present, .absent {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            background-color: #808080; /* Grey color */
+            color: #fff;
+        }
+
+        .present.glow {
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px #4CAF50;
+            }
+            to {
+                box-shadow: 0 0 20px #4CAF50;
+            }
+        }
+
+        .absent.dull {
+            opacity: 0.6;
+        }
+
+        .date-form {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .date-input {
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ... Your existing HTML code ... -->
+
+<div class="date-form">
+    <form id="attendanceForm">
+        <label for="attendanceDate">Attendance Date:</label>
+        <input type="date" id="attendanceDate" class="date-input" name="date">
+        
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" class="student-input" name="studentId">
+        
+        <label for="status">Status:</label>
+        <select id="status" class="status-select" name="status">
+            <option value="present">Present</option>
+            <option value="absent">Absent</option>
+        </select>
+        
+        <button type="button" class="submit-btn" onclick="submitAttendance()">Submit</button>
+    </form>
+</div>
+
+<script>
+    function submitAttendance() {
+        const form = document.getElementById('attendanceForm');
+        const formData = new FormData(form);
+
+        // Convert FormData to JSON
+        const jsonData = {};
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+
+        // Send data to the server using fetch
+        fetch('http://localhost:3000/submitAttendance', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            // Handle success or show a confirmation message to the user
+        })
+        .catch(error => {
+            console.error(error);
+            // Handle error or show an error message to the user
+        });
+    }
+</script>
+
+<!-- ... Your existing HTML code ... -->
+
+
+</body>
+</html>
